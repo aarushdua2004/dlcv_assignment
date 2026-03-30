@@ -26,4 +26,30 @@ This repository contains a comprehensive Content-Based Image Retrieval (CBIR) sy
    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/aarushdua2004/dlv_assignment.git)
    cd dlcv_assignment
 Install the required dependencies:
+```bash
+pip install -r requirements.txt
+```
+💻 How to Use the System
+Step 1: Build the Feature Databases
+Before querying or evaluating, you must build the offline feature databases. This script will download the datasets (if not present) and generate MNIST_features.pkl, FashionMNIST_features.pkl, and CIFAR10_features.pkl.
+```bash
+python build_db.py
+```
+Step 2: Launch the Web App
+To interactively test the retrieval system, upload your own images, and visualize the feature fusion in action, run the Streamlit app:
+```bash
+streamlit run app.py
+```
+Step 3: Run the Evaluation Suite
+To rigorously evaluate the mathematical performance of all methods across all datasets, run the evaluation script:
+```bash
+python evaluate.py
+```
+This will output a comparative table of Precision, Recall, and mAP for LBP, NN, DNN, CNN, SFGD, Color, and Hybrid models.
 
+📊 Core Findings
+Spatial constraints: Classical spatial methods (LBP) excel on zero-background datasets (MNIST) but suffer from "color-blindness" and background dominance on CIFAR-10.
+
+Resolution collapse: Handling 32x32 CIFAR-10 images in pre-trained CNNs requires explicit ImageNet normalization to prevent spatial pooling destruction.
+
+Hybrid dominance: Fusing SFGD or Color features with CNN embeddings stabilizes the retrieval manifold, successfully separating confusing classes (e.g., distinguishing Airplanes from Trucks by validating edge structures alongside context).
