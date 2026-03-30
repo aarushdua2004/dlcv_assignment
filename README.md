@@ -25,3 +25,7 @@ This repository contains a comprehensive Content-Based Image Retrieval (CBIR) sy
    ```bash
    git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/aarushdua2004/dlv_assignment.git)
    cd dlcv_assignment
+Install the required dependencies:
+
+Bash
+pip install -r requirements.txt
