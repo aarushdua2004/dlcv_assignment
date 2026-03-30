@@ -27,4 +27,3 @@ This repository contains a comprehensive Content-Based Image Retrieval (CBIR) sy
    cd dlcv_assignment
 Install the required dependencies:
 
-python build_db.py
